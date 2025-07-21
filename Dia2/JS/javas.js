@@ -23,7 +23,12 @@ while (menu){
         let Descripcion = prompt("Descripción (opcional)");
         let guardar = prompt ("Ingrese 'S' para guardar o 'C' para cancelar.");
         if (opcion == "S"){
-            
+            let nuevo = {
+                "monto":monto,
+                "categoria":categoria,
+                "Descripcion":Descripcion,
+            };
+            gasto.push(nuevo);
         }
     }
 }
