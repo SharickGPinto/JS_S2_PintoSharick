@@ -60,11 +60,14 @@ while (menu) {
             };
         }
         else if (listar == "2") {
-            let Fcategoria = prompt("SELECCIONE LA CATEGORIA")
-                "Categoria: " + gasto[i]["categoria"] + "\n" +
-
-
-        };
+            let Fcategoria = gasto.length;
+            for (i= 0; i<Fcategoria; i++) {
+            prompt("SELECCIONE LA CATEGORIA" (alert("ver categorias"+
+                "Categoria: " + gasto[i]["categoria"] + "\n" 
+                )   ))
+             
+            };
+        }
 
 
 
