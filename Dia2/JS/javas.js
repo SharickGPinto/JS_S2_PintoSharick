@@ -61,9 +61,10 @@ while (menu) {
         }
         else if (listar == "2") {
             let Fcategoria = prompt("SELECCIONE LA CATEGORIA")
+                "Categoria: " + gasto[i]["categoria"] + "\n" +
 
 
-        }
+        };
 
 
 
