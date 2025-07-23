@@ -52,7 +52,7 @@ while (menu) {
         if (listar == "1") {
             let nlista = gasto.length;
             for (i = 0; i < nlista; i++) {
-                alert("Ver gastos"+
+                alert("Ver gastos" +
                     "Monto: " + gasto[i]["monto"] + "\n" +
                     "Categoria: " + gasto[i]["categoria"] + "\n" +
                     "Descripcion: " + gasto[i]["Descripcion"] + "\n"
@@ -61,17 +61,17 @@ while (menu) {
         }
         else if (listar == "2") {
             let Fcategoria = gasto.length;
-            for (i= 0; i<Fcategoria; i++) {
-            prompt("SELECCIONE LA CATEGORIA" (alert("ver categorias"+
-                "Categoria: " + gasto[i]["categoria"] + "\n" 
-                )   ))
-             
-            };
-        }
+            prompt("SELECCIONE LA CATEGORIA")
 
 
-
+        };
     }
+    else (listar == "3"); {
+        
+    }
+
+
+
 }
 
 //Desarrollado por Sharick Giovanna t.i 1098674201
