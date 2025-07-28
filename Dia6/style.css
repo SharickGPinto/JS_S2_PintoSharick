@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+h1{
+    text-align: center;
+}
+
+main{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px
+}
+
+.image-container{
+    display: flex;
+}
+
+.image-container img{
+    width: 100%
+}
