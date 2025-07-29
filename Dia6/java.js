@@ -9,13 +9,15 @@ function buscarPersonajes (){
 
     const xhr = new XMLHttpRequest(); //la importancion
 
-    const url = fetch("https://rickandmortyapi.com/api/character");
+    const url =`https://rickandmortyapi.com/api/character`
+
     xhr.open ("GET", url, true);
     xhr.onreadystatechange = function (){
         if (xhr.readyState ===4 && xhr.status === 200){
             try{
 
                 const daticos = JSON.parse(xhr.responseText)
+                console.log (daticos)
             }
 
             catch (err){
@@ -29,4 +31,4 @@ function buscarPersonajes (){
 
 }
 
-buscarPersonajes8();
+buscarPersonajes();
