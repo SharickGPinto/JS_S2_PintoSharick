@@ -1,36 +1,20 @@
-function getCaracters(done){
+/* CONSUMO DE APLI
+MEDIANTE XMLHttpRequest*/
 
-    let results = fetch("https://rickandmortyapi.com/api/character");
+/*Modularizar el consumo de la api*/
 
-    results
-        .then (Response => Response.json())
-        .then(data => {
-        done(data)
-    });
+function buscarPersonajes (){
+
+    /* const nombre promt (ingresar el nombre del personaje)  */
+
+    const xhr = new XMLHttpRequest(); //la importancion
+
+    const url = fetch("https://rickandmortyapi.com/api/character");
+    xhr.open ("GET", url, true);
+    xhr.onreadystatechange = function (){
+
+    };
+    
+
+
 }
-
-getCaracters (data => {
-
-    data.results.forEach(personaje => {
-
-     let article = document.createRange().createContextualFragment(
-       <article>
-
-        <div class="image-container">
-        <img src="${personaje.image}" alt="Personaje">
-        </div>
-
-
-    <h2>${personaje.name}</h2>
-    <span>${personaje.status}</span>
-
-    </article>
-    );
-
-
-        let main = document.querySelector("main");
-        
-        main.append(article);
-});
-
-});
