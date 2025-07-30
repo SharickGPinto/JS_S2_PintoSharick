@@ -75,14 +75,14 @@ while (tabla) {
 5. Salir 
 ######################`);
 
-    if (opcion == "1") { let opcion = prompt(` Ingredietes
+    if (opcion == "1") { 
+        let ingre = prompt(` Ingredietes
 ======================================================
 1. Encontrar todos los ingredientes con stock menor a 400.
 2. Aumentar en 1.5 el precio de todos los ingredientes.
 3. Eliminar todos los ingredientes que tengan un stock de 0.
 4. Encontrar el ingrediente más caro.
 ===========================================================`);
-
 
     } else if (opcion == "2") {
 

@@ -72,3 +72,12 @@ resta = 5-2
 console.log (resta)
 booleanito1 = false
 console.log (booleanito1)
+
+
+//##########################################
+
+function saludar(nombre, callback){
+        callback(nombre);
+}
+saludar ("Ana", (nombre) =>
+console.log ('hola, ${nombre}'));
