@@ -1,7 +1,7 @@
 function informacionP() {
     const nombreP = prompt("igresa el id del persoanje")
     const xhr = new XMLHttpRequest();
-    const url = `http https://swapi.py4e.com/api/people/1/`;
+    const url = `https://swapi.py4e.com/api/people/1/`;
     xhr.open("GET", url, true);
     xhr.onreadystatechange = function () {
         try {
