@@ -1,20 +1,22 @@
-/* CONSUMO DE APLI
+/* CONSUMO DE API
 MEDIANTE XMLHttpRequest*/
 
 /*Modularizar el consumo de la api*/
 
 function buscarPersonajes (){
 
-    const nombreUsar = prompt ("ingresar el nombre del personaje") 
+    const nombreUsar = prompt ("ingresar el nombre del personaje");
     const xhr = new XMLHttpRequest(); //la importancion
-    const url =`https://rickandmortyapi.com/api/character`
-    console.log(url)
+    const url =`https://rickandmortyapi.com/api/character?name=${nombreUsar}`;
+    console.log(url);
     xhr.open ("GET", url, true);
+
     xhr.onreadystatechange = function (){
-        if (xhr.readyState === 3){
+        if (xhr.readyState===3){
+
             alert ("CARGANDO...")
         }
-        else if(xhr.readyState=== 4 && xhr.status === 200){
+        else if(xhr.readyState===4 && xhr.status === 200){
             try{
 
                 const daticos = JSON.parse(xhr.responseText)

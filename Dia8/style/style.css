@@ -1,0 +1,26 @@
+body{
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    text-align: center;
+}
+input[placeholder="Ingresa un nombre..."]{
+    padding: 10px;
+    width: 250px;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+
+button{
+    padding: 10px 15px;
+    font-size: 16px;
+    
+}
+
+.resultado{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
