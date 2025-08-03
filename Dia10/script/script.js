@@ -19,13 +19,22 @@ function baraja(array) {
     }
     return array;
 }
+
+/* DETENCCION DE PARED */
+
+let primeraCarta = null;
+let segundaCarta = null;
+let bloqueo = false;
+
+
 /*  RENDER CARTAS VOLTEADAS */
 function renderCartas() {
     const main = document.getElementById("cartas");
     main.innerHTML = "";
 
     // BARAJA DE 16 CARTAS
-    const seleccionadas = baraja([...cartas]).slice(0, 16);
+    const seleccionadas = baraja([...cartas]).slice(0, 8);
+    seleccionadas = baraja([...seleccionadas, ...seleccionadas]);
 
     seleccionadas.forEach(cartacode => {
         const article = document.createElement("article");
@@ -41,12 +50,40 @@ function renderCartas() {
         /* EVENTO DE MOVIMIENTO DE LA CARTA*/
 
         article.addEventListener("click", () => {
+            if (bloqueo) return;
             const img = article.querySelector("img");
             const atras = "https://deckofcardsapi.com/static/img/back.png";
             const adelante = img.getAttribute("data-front");
-            img.src = img.src === atras ? adelante : atras;
+
+            // ACA EVITA VOLVER A VOLTEAR LA CARTA
+            if (img.src === adelante) return;
+            img.src = adelante;
+            if (!primeraCarta) {
+                primeraCarta = img;
+            } else if (!segundaCarta) {
+                segundaCarta = img;
+                bloqueo = true;
+            }
+
+            // COMPARAR
+            if (primeraCarta.getAttribute("data-front") === segundaCarta.getAttribute("data-front")) {
+                // SI SON IGGUALES DEJARLAS 
+                primeraCarta = null;
+                segundaCarta = null;
+                bloqueo = false;
+            } else {
+                // SE TAPAN SI SON DIFERENTES
+                setTimeout(() => {
+                    primeraCarta.src = atras;
+                    segundaCarta.src = atras;
+                    primeraCarta = null;
+                    segundaCarta = null;
+                    bloqueo = false;
+                }, 1000);
+            }
+
         });
         main.appendChild(article);
     });
-} 
+}
 renderCartas();
