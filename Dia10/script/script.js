@@ -73,6 +73,12 @@ function renderCartas() {
                     primeraCarta = null;
                     segundaCarta = null;
                     bloqueo = false;
+
+                if (paresEncontrados === 8) {
+                        setTimeout(() => {
+                            window.location.href = "../pages/menu.html"; // redirigir al menú
+                        }, 1000);
+                    }    
                 } else {
                     // SE TAPAN SI SON DIFERENTES
                     setTimeout(() => {

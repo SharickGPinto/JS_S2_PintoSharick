@@ -26,3 +26,12 @@ body {
     cursor: pointer;
 }
 
+.salir{
+    background-image: url(../media/salir.png);
+    background-size: cover;
+    position: absolute;
+    margin-top: 90px;
+    width: 280px;
+    height: 280px;
+    z-index: 4;
+}
