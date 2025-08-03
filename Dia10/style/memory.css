@@ -11,5 +11,18 @@ body {
     width: 100%;
 }
 
+#cartas {
+    display: grid;
+    grid-template-columns: repeat(8, 110px);
+    grid-gap: 18px;                       
+    justify-content: center;   
+          
+}
 
+.cartas img {
+    margin-top: 70px;
+    width: 160px;
+    height: auto;
+    cursor: pointer;
+}
 

@@ -1,5 +1,5 @@
 /* CODIGOS DE LAS CARTAS GENERADOS MANUALMENTE */
-const rankin = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+const rankin = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "0", "J", "Q", "K"];
 const esp = ["H", "D", "C", "S"];
 
 let cartas = [];
