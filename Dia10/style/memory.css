@@ -12,22 +12,4 @@ body {
 }
 
 
-main {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 18px;
-    max-width: 1200px;
-    
-}
-
-.cartas img {
-    width: 100%;
-    max-width: 200px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.cartas img:hover {
-    transform: scale(1.1);
-}
 
