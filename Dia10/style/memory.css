@@ -13,7 +13,7 @@ body {
 
 #cartas {
     display: grid;
-    grid-template-columns: repeat(4, 110px);
+    grid-template-columns: repeat(8, 110px);
     grid-gap: 18px;                       
     justify-content: center;   
           

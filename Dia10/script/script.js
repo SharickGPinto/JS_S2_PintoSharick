@@ -20,7 +20,7 @@ function baraja(array) {
     return array;
 }
 
-/* DETENCCION DE PARED */
+/* DETENCCION DE PARES */
 
 let primeraCarta = null;
 let segundaCarta = null;
@@ -33,7 +33,7 @@ function renderCartas() {
     main.innerHTML = "";
 
     // BARAJA DE 16 CARTAS
-    const seleccionadas = baraja([...cartas]).slice(0, 8);
+    let seleccionadas = baraja([...cartas]).slice(0, 8);
     seleccionadas = baraja([...seleccionadas, ...seleccionadas]);
 
     seleccionadas.forEach(cartacode => {
@@ -57,31 +57,33 @@ function renderCartas() {
 
             // ACA EVITA VOLVER A VOLTEAR LA CARTA
             if (img.src === adelante) return;
+
             img.src = adelante;
+
             if (!primeraCarta) {
                 primeraCarta = img;
             } else if (!segundaCarta) {
                 segundaCarta = img;
                 bloqueo = true;
-            }
 
-            // COMPARAR
-            if (primeraCarta.getAttribute("data-front") === segundaCarta.getAttribute("data-front")) {
-                // SI SON IGGUALES DEJARLAS 
-                primeraCarta = null;
-                segundaCarta = null;
-                bloqueo = false;
-            } else {
-                // SE TAPAN SI SON DIFERENTES
-                setTimeout(() => {
-                    primeraCarta.src = atras;
-                    segundaCarta.src = atras;
+
+                // COMPARAR
+                if (primeraCarta.getAttribute("data-front") === segundaCarta.getAttribute("data-front")) {
+                    // SI SON IGGUALES DEJARLAS 
                     primeraCarta = null;
                     segundaCarta = null;
                     bloqueo = false;
-                }, 1000);
+                } else {
+                    // SE TAPAN SI SON DIFERENTES
+                    setTimeout(() => {
+                        primeraCarta.src = atras;
+                        segundaCarta.src = atras;
+                        primeraCarta = null;
+                        segundaCarta = null;
+                        bloqueo = false;
+                    }, 1000);
+                }
             }
-
         });
         main.appendChild(article);
     });
