@@ -19,6 +19,14 @@ header video {
     height: 100%;
 }
 
-@keyframes animacion {
-
+.play{
+   background: url("../media/play.png");
+   background-size: cover;
+   width: 13vw;
+   height: 13vw;
+   align-items: center;
+   top: 25vw;
+   left: 42vw;
+   position: relative;
+   cursor: pointer;
 }
