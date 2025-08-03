@@ -1,25 +1,26 @@
-*{
-padding: 0;
-margin: 0;
-background-color: black;
+* {
+   padding: 0;
+   margin: 0;
+   background-color: black;
 }
 
 header {
-    position: relative;
-    width: 100%;
-    height: 100vh; /
+   position: relative;
+   width: 100%;
+   height: 100vh;/
 }
 
 header video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 100%;
+   height: 100%;
+   pointer-events: none;
 }
 
-.play{
+.play {
    background: url("../media/play.png");
    background-size: cover;
    width: 15vw;
@@ -31,26 +32,33 @@ header video {
    background-position: center;
    animation: animacion 30s 1s;
    opacity: 0;
+   z-index: 2;
+}
+
+.play a {
+   display: block;
+   width: 100%;
+   height: 100%;
 }
 
 @keyframes animacion {
 
-   0%{
+   0% {
       opacity: 0;
    }
 
-   25%{
-      opacity: 5;
+   25% {
+      opacity: 0.5;
    }
 
-   50%{
-   opacity: 1;
+   50% {
+      opacity: 1;
    }
 
-   100%{
-      opacity: 5;
+   100% {
+      opacity: 1;
    }
 
 
-   
+
 }
