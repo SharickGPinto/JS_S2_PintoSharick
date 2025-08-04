@@ -1,14 +1,14 @@
 /* CODIGOS DE LAS CARTAS GENERADOS MANUALMENTE */
-const rankin = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "0", "J", "Q", "K"];
-const esp = ["H", "D", "C", "S"];
-
-let cartas = [];
-/*CREAR LAS 52 CARTAS */
-esp.forEach(suit => {
-    rankin.forEach(rank => {
-        cartas.push(`${rank}${suit}`);
-    });
-});
+function getData(url, callback) {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            const data = JSON.parse(xhr.responseText);
+            callback(data);
+        }
+    };
+    xhr.send();
 
 /* PARA OBTENER EL VALOR DE LA CARTA */
 function valorcarta(codigo) {
