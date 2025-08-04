@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'letra';
-    src: url("../fonts/Fjalla_One/FjallaOne-Regular.ttf");
+   font-family: 'letra';
+   src: url("../fonts/Fjalla_One/FjallaOne-Regular.ttf");
 }
 
 * {
@@ -9,10 +9,10 @@
    box-sizing: border-box;
 }
 
-body{
+body {
    background-color: black;
-    font-family: 'letra';
-    color: black;
+   font-family: 'letra';
+   color: black;
 }
 
 header {
@@ -28,24 +28,24 @@ header video {
    transform: translate(-50%, -50%);
    width: 100%;
    height: 100%;
-   
+
 }
 
-.reglas{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.9);
-    color: black;
-    padding: 60px;
-    border-radius: 70px;
-    width: 50%;
-    height: 60%;
-   font-size: 210%;
+.reglas {
+   position: absolute;
+   top: 70px;
+   left: 50%;
+   transform: translateX(-50%);
+   background-color: rgba(255, 255, 255, 0.9);
+   color: black;
+   padding: 20px 30px;
+   border-radius: 20px;
+   width: 60%;
+   max-width: 600px;
+   font-size: 1.5rem;
 }
 
-.reglas a{
-    color: red;
-    font-size: 70px;
+.reglas a {
+   color: red;
+   font-size: 30px;
 }
