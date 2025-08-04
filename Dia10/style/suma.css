@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'letra';
+    src: url("../fonts/Fjalla_One/FjallaOne-Regular.ttf");
+}
+
+body {
+    font-family: 'letra';
+    background: url('../media/fondo.png') no-repeat center;
+    background-size: cover;
+    color: red;
+    text-align: center;
+    height: 47vw;
+
+}
+
+.juego {
+    background: rgba(38, 58, 33, 0.6);
+    padding: 70px;
+    border-radius: 60px;
+    margin: 25px;
+    width: 200px;
+}
+
+#cartas {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+#cartas img {
+    width: 80px;
+}
+
+input, button {
+    text-align: center;
+    margin: 2px;
+    padding: 6px;
+    font-size: 15px;
+}
+
+.salir {
+    display: block;
+    margin-top: 50px;
+    color: red;
+    text-decoration: none;
+    font-size: 50px;
+}
