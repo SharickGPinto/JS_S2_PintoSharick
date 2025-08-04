@@ -24,16 +24,13 @@ function baraja(array) {
 let primeraCarta = null;
 let segundaCarta = null;
 let bloqueo = false;
+let paresEncontrados = 0;
 
 
 /*  RENDER CARTAS VOLTEADAS */
-function renderCartas() {
+function renderCartas(seleccionadas) {
     const main = document.getElementById("cartas");
     main.innerHTML = "";
-
-    // BARAJA DE 16 CARTAS
-    let seleccionadas = baraja([...cartas]).slice(0, 8);
-    seleccionadas = baraja([...seleccionadas, ...seleccionadas]);
 
     seleccionadas.forEach(cartacode => {
         const article = document.createElement("article");
@@ -68,7 +65,7 @@ function renderCartas() {
 
                 // COMPARAR
                 if (primeraCarta.getAttribute("data-front") === segundaCarta.getAttribute("data-front")) {
-                    // SI SON IGGUALES DEJARLAS 
+                    paresEncontrados++;
                     primeraCarta = null;
                     segundaCarta = null;
                     bloqueo = false;
@@ -93,4 +90,18 @@ function renderCartas() {
         main.appendChild(article);
     });
 }
-renderCartas();
+function jueguito() {
+
+    getData("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1", function (deck) {
+        const deckId = deck.deck_id;
+
+        getData(`https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=8`, function (draw) {
+            let cartas = draw.cards.map(carta => carta.code);
+
+            let seleccionadas = baraja([...cartas, ...cartas]);
+            renderCartas(seleccionadas);
+        });
+    });
+}
+
+jueguito();
