@@ -93,7 +93,7 @@ function renderCartas(seleccionadas) {
 
     });
 }
-function play() {
+function iniciarJuego() {
 
     getData("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1", function (deck) {
         const deckId = deck.deck_id;
@@ -107,4 +107,4 @@ function play() {
     });
 }
 
-play();
+iniciarJuego();
