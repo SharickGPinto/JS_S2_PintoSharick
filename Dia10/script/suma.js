@@ -10,6 +10,17 @@ esp.forEach(suit => {
     });
 });
 
+/* PARA OBTENER EL VALOR DE LA CARTA */
+function valorcarta(codigo) {
+    let rank = codigo.slice(0, -1);
+    if(rank === "A") return 1;
+    if(rank === "J") return 11;
+    if(rank === "Q") return 12;
+    if(rank === "K") return 13;
+    if(rank === "0") return 10;
+        return parseInt(rank)
+}
+
 
 /* BARAJAS DE LAS CARTAS */
 function baraja(array) {
@@ -19,3 +30,7 @@ function baraja(array) {
     }
     return array;
 }
+
+let primeraCarta, segundaCarta, suma;
+
+
