@@ -48,6 +48,7 @@ header video {
 }
 
 .juegos {
+    grid-template-columns: repeat(2, 15vw);
     position: absolute;
     top: 30%;
     left: 20%;
@@ -56,9 +57,20 @@ header video {
     z-index: 3;
     opacity: 0;
     animation: animacion 30s 2s;
-
 }
 
+.juegos2 {
+    grid-template-columns: repeat(2, 15vw);
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 15vw;
+    height: 15vw;
+    z-index: 3;
+    opacity: 0;
+    animation: animacion 30s 2s;
+
+}
 
 .memory-game {
     background: url("../media/memory-Game.png");
@@ -73,12 +85,38 @@ header video {
     height: 100%;
 }
 
-.reglas{
+.suma {
+    background: url("../media/sumaa.png");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.suma a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.reglas2 {
     background: url("../media/reglas.png");
     background-size: cover;
     width: 100%;
-    height: 100%;  
+    height: 100%;
 }
+
+.reglas2 a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.reglas {
+    background: url("../media/reglas.png");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
 .reglas a {
     display: block;
     width: 100%;
@@ -87,19 +125,19 @@ header video {
 
 @keyframes animacion {
 
-   0% {
-      opacity: 0;
-   }
+    0% {
+        opacity: 0;
+    }
 
-   25% {
-      opacity: 0.5;
-   }
+    25% {
+        opacity: 0.5;
+    }
 
-   50% {
-      opacity: 1;
-   }
+    50% {
+        opacity: 1;
+    }
 
-   100% {
-      opacity: 1;
-   }
+    100% {
+        opacity: 1;
+    }
 }

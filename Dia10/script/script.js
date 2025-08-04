@@ -10,6 +10,7 @@ esp.forEach(suit => {
     });
 });
 
+
 /* BARAJAS DE LAS CARTAS */
 function baraja(array) {
     for (let i = array.length - 1; i > 0; i--) {

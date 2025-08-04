@@ -52,7 +52,7 @@ function nuevaR(){
 
 function verificar(){
     const respuesta = parseInt(document.getElementById("respuesya").value);
-    const resultado = document,getElementById("resultado");
+    const resultado = document.getElementById("resultado");
     if(respuesta === suma){
         resultado.textContent = "win"
     } else{
