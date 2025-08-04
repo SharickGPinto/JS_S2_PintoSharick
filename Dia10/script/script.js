@@ -1,16 +1,15 @@
 /* CODIGOS DE LAS CARTAS GENERADOS MANUALMENTE */
-const rankin = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "0", "J", "Q", "K"];
-const esp = ["H", "D", "C", "S"];
-
-let cartas = [];
-/*CREAR LAS 52 CARTAS */
-esp.forEach(suit => {
-    rankin.forEach(rank => {
-        cartas.push(`${rank}${suit}`);
-    });
-});
-
-
+function getData(url, callback) {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            const data = JSON.parse(xhr.responseText);
+            callback(data);
+        }
+    };
+    xhr.send();
+}
 /* BARAJAS DE LAS CARTAS */
 function baraja(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -25,16 +24,13 @@ function baraja(array) {
 let primeraCarta = null;
 let segundaCarta = null;
 let bloqueo = false;
+let paresEncontrados = 0;
 
 
 /*  RENDER CARTAS VOLTEADAS */
-function renderCartas() {
+function renderCartas(seleccionadas) {
     const main = document.getElementById("cartas");
     main.innerHTML = "";
-
-    // BARAJA DE 16 CARTAS
-    let seleccionadas = baraja([...cartas]).slice(0, 8);
-    seleccionadas = baraja([...seleccionadas, ...seleccionadas]);
 
     seleccionadas.forEach(cartacode => {
         const article = document.createElement("article");
@@ -51,6 +47,7 @@ function renderCartas() {
 
         article.addEventListener("click", () => {
             if (bloqueo) return;
+
             const img = article.querySelector("img");
             const atras = "https://deckofcardsapi.com/static/img/back.png";
             const adelante = img.getAttribute("data-front");
@@ -70,15 +67,16 @@ function renderCartas() {
                 // COMPARAR
                 if (primeraCarta.getAttribute("data-front") === segundaCarta.getAttribute("data-front")) {
                     // SI SON IGGUALES DEJARLAS 
+                    paresEncontrados++;
                     primeraCarta = null;
                     segundaCarta = null;
                     bloqueo = false;
 
-                if (paresEncontrados === 8) {
+                    if (paresEncontrados === 8) {
                         setTimeout(() => {
                             window.location.href = "../pages/menu.html"; // redirigir al menú
                         }, 1000);
-                    }    
+                    }
                 } else {
                     // SE TAPAN SI SON DIFERENTES
                     setTimeout(() => {
@@ -92,6 +90,21 @@ function renderCartas() {
             }
         });
         main.appendChild(article);
+
     });
 }
-renderCartas();
+function iniciarJuego() {
+
+    getData("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1", function (deck) {
+        const deckId = deck.deck_id;
+
+        getData(`https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=8`, function (draw) {
+            let cartas = draw.cards.map(carta => carta.code);
+
+            let seleccionadas = baraja([...cartas, ...cartas]);
+            renderCartas(seleccionadas);
+        });
+    });
+}
+
+iniciarJuego();
