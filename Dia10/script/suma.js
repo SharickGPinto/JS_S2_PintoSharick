@@ -9,7 +9,6 @@ function getData(url, callback) {
         }
     };
     xhr.send();
-}
 
 /* PARA OBTENER EL VALOR DE LA CARTA */
 function valorcarta(codigo) {
