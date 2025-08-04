@@ -73,6 +73,18 @@ header video {
     height: 100%;
 }
 
+.reglas{
+    background: url("../media/reglas.png");
+    background-size: cover;
+    width: 100%;
+    height: 100%;  
+}
+.reglas a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 @keyframes animacion {
 
    0% {
