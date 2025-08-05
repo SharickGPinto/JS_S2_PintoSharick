@@ -4,7 +4,7 @@ function informacionP() {
     const nombreP = document.getElementById("nombreInput").value.trim();
     console.log(nombreP);
     const xhr = new XMLHttpRequest();
-    const url = `https://superheroapi.com/api/ca4c752a3aac881d5bb269f1aa297311/search${nombreP}`;
+    const url = `https://superheroapi.com/api/ca4c752a3aac881d5bb269f1aa297311/search/${nombreP}`;
     console.log(url);
     xhr.open("GET", url, true);
 
@@ -22,10 +22,11 @@ function informacionP() {
                 <p>APARENCE: <span>${datos.appearance}</span></p>
                 `
                 console.log(datos["name"]);
-            }catch (error) {
+            } catch (error) {
                 console.log("error");
             }
         }
-    };
-    xhr.send();
+        xhr.send();
+    }
+    
 }
