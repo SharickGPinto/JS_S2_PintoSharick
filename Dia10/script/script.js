@@ -64,7 +64,7 @@ function renderCartas(seleccionadas) {
 
 
                 // COMPARAR
-                if (primeraCarta.getAttribute("daticos") === segundaCarta.getAttribute("daticos")) {
+                if (primeraCarta.getAttribute("data-front") === segundaCarta.getAttribute("data-front")) {
                     paresEncontrados++;
                     primeraCarta = null;
                     segundaCarta = null;
