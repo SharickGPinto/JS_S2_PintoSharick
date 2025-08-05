@@ -49,7 +49,7 @@ function renderCartas(seleccionadas) {
             if (bloqueo) return;
             const img = article.querySelector("img");
             const atras = "https://deckofcardsapi.com/static/img/back.png";
-            const adelante = img.getAttribute("daticos");
+            const adelante = img.getAttribute("data-front");
 
             // ACA EVITA VOLVER A VOLTEAR LA CARTA
             if (img.src === adelante) return;
