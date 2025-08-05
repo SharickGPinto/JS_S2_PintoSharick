@@ -96,7 +96,9 @@ function jueguito() {
         const carticasid = carticas.deck_id;
 
         getData(`https://deckofcardsapi.com/api/deck/${carticasid}/draw/?count=8`, function (cartasd) {
-            let cartas = cartasd.cards.map(carta => carta.code);
+            let cartas = cartasd.cards.map(carta => {
+                return carta.code.replace("0", "T");
+            });
 
             let seleccionadas = barajadita([...cartas, ...cartas]);
             renderCartas(seleccionadas);
