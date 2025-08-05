@@ -11,7 +11,7 @@ function getData(url, callback) {
 }
 
 /* BARAJAS DE LAS CARTAS */
-function baraja(array) {
+function barajadita(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
@@ -49,7 +49,7 @@ function renderCartas(seleccionadas) {
             if (bloqueo) return;
             const img = article.querySelector("img");
             const atras = "https://deckofcardsapi.com/static/img/back.png";
-            const adelante = img.getAttribute("data-front");
+            const adelante = img.getAttribute("daticos");
 
             // ACA EVITA VOLVER A VOLTEAR LA CARTA
             if (img.src === adelante) return;
@@ -64,7 +64,7 @@ function renderCartas(seleccionadas) {
 
 
                 // COMPARAR
-                if (primeraCarta.getAttribute("data-front") === segundaCarta.getAttribute("data-front")) {
+                if (primeraCarta.getAttribute("daticos") === segundaCarta.getAttribute("daticos")) {
                     paresEncontrados++;
                     primeraCarta = null;
                     segundaCarta = null;
@@ -92,13 +92,13 @@ function renderCartas(seleccionadas) {
 }
 function jueguito() {
 
-    getData("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1", function (deck) {
-        const deckId = deck.deck_id;
+    getData("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1", function (carticas) {
+        const carticasid = carticas.deck_id;
 
-        getData(`https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=8`, function (draw) {
-            let cartas = draw.cards.map(carta => carta.code);
+        getData(`https://deckofcardsapi.com/api/deck/${carticasid}/draw/?count=8`, function (cartasd) {
+            let cartas = cartasd.cards.map(carta => carta.code);
 
-            let seleccionadas = baraja([...cartas, ...cartas]);
+            let seleccionadas = barajadita([...cartas, ...cartas]);
             renderCartas(seleccionadas);
         });
     });
