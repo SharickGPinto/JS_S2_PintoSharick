@@ -23,19 +23,18 @@ while (menu) {
         let Descripcion = prompt("Descripción (opcional)");
         let guardar = prompt("Ingrese 'S' para guardar o 'N' para cancelar.");
         if (guardar == "S") {
-            let nuevo = {
+            let nuevoGasto = {
                 "monto": monto,
                 "categoria": categoria,
                 "Descripcion": Descripcion,
             };
+
+            gasto.push(nuevoGasto);
             alert("el gasto fue guardado exitosamente");
-            gasto.push(nuevo);
         }
         else if (guardar == "N") {
             alert("NO SE GUARDO NADA");
-            break;
-        }
-        else {
+        } else {
             (alert("No puso nada bien, mal "));
             break;
         }
@@ -60,16 +59,40 @@ while (menu) {
             };
         }
         else if (listar == "2") {
-            let Fcategoria = gasto.length;
-            prompt("SELECCIONE LA CATEGORIA")
+            let categoriaF = prompt("Ingrese la categoria que desea filtrar (comida,transporte,entretenimiento,otros)");
+            let encontrados = false;
 
-
+            for (let i = 0; i < gasto.length; i++) {
+                if (gasto[i]["categoria"].toLowercase() === categoriaF);
+                alert("gasto" + (i + 1) +
+                    `Monto` + gasto[i]["monto"] +
+                    `categoria` + gasto[i]["categoria"] +
+                    `Descripcion` + gasto[i]["descripcion"] + ``);
+                encontrados = true;
+            }
         };
+        if (!encontrados) {
+            alert("No se encontro gastos en la categoria");
+        }
     }
-    else (listar == "3"); {
-        
+    else if (opcion == "3") {
+        let total = 0;
+        for (let i = 0; i < gasto.length; i++) {
+            total += gasto[i].monto;
+        }
+        alert("El total de los gastos registrados es $" + total.toFixed(2));
     }
-
+    else if (opcion == "4") {
+        let reporte = `reporte de gastos`
+        for (let i = 0; i < gasto.length; i++) {
+            reporte += `gasto ${i + 1}:\nMonto: $${gasto[i].monto}\nCategoría: ${gasto[i].categoria}\nDescripción: ${gasto[i].descripcion}\n\n`;
+        }
+        alert(reporte);
+    }
+    else if  (opcion == "5"){
+        alert("saliste del simulador")
+        menu = false;
+    }
 
 
 }
