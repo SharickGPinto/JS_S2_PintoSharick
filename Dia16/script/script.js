@@ -52,6 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="eliminado">
                     <img src="./fonts/storage/img/pngwing.com (4).png" status="${cap["status"]}" data-id="${cap["id"]}" alt="" class='eliminado'>
                 </div>
+                <div class="agregar">
+                    <img src="./fonts/storage/img/sma.png" alt="">
+                </div>
             </div>
                 `
             } else if (cap.status === "On hold") {
@@ -67,6 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div class="eliminadoNegativo">
                     <img src="./fonts/storage/img/pngwing.com (4).png"  status="${cap["status"]}" data-id="${cap["id"]}" alt="" class='eliminado'>
+                </div>
+                <div class="agregarNegativo">
+                    <img src="./fonts/storage/img/sma.png" alt="">
                 </div>
             </div>`
             }
