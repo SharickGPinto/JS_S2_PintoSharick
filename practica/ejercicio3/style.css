@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    background: #ffffff;
+    color: #000000
+}
+
+.topbar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+}
+
+.topbar h1 {
+    font-size: 18px;
+    margin: 0
+}
+
+#formBuscar {
+    display: flex;
+    gap: 8px
+}
+
+#formBuscar input {
+    padding: 10px 12px;
+    border-radius: 10px;
+    color: #000000;
+    min-width: 240px
+}
+
+#formBuscar button {
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto
+}
+
+.card {
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover
+}
+
+.card .card__body {
+    padding: 12px
+}
+
+.card h3 {
+    margin: 0 0 6px 0;
+    font-size: 16px
+}
+
+.card .meta {
+    font-size: 12px;
+    color: #000000
+}
+
+.card button {
+    margin: 12px;
+    align-self: flex-start;
+    padding: 8px 10px;
+    background: #ffffff;
+    color: #000000;
+    cursor: pointer
+}
+
+.empty {
+    grid-column: 1/-1;
+    text-align: center;
+    opacity: .8;
+    padding: 40px
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    place-items: center;
+    padding: 20px
+}
+
+.modal[aria-hidden="false"] {
+    display: grid
+}
+
+.modal__card {
+    max-width: 860px;
+    width: min(95vw, 860px);
+    background: #ffffff;
+    padding: 16px
+}
+
+.modal__close {
+    position: absolute;
+    right: 26px;
+    top: 18px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    padding: 6px 10px
+}
+
+.detalle {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 16px
+}
+
+.detalle img {
+    width: 100%;
+    border-radius: 12px
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 12px;
+    margin-right: 6px;
+    background: #ffffff;
+    color: black;
+}
+
+.section {
+    margin-top: 10px
+}
+
+.section h4 {
+    margin: 0 0 6px 0;
+    font-size: 14px;
+    color: #000000
+}
+
+.ingredients {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 8px
+}
+
+.ingredients li {
+    border-radius: 8px;
+    padding: 6px 8px;
+    font-size: 13px;
+    list-style: none
+}
+
+.instructions {
+    white-space: pre-wrap;
+    line-height: 1.5;
+    padding: 10px;
+}

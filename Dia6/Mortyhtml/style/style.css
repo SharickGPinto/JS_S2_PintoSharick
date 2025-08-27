@@ -1,0 +1,44 @@
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 12px;
+}
+
+article {
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
+}
+
+.image_container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Barra de búsqueda */
+.searchbar {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+}
+
+.searchbar input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+}
+
+.searchbar button {
+  padding: 8px 14px;
+  border: 1px solid #999;
+  border-radius: 8px;
+  background: #f5f5f5;
+  cursor: pointer;
+}
